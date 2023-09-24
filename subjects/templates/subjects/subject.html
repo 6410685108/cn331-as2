@@ -1,0 +1,38 @@
+{% extends "subjects/layout.html" %}
+{% block title %}Subjects{% endblock %}
+{% block body %}
+    <h1>All Subjects</h1>
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-primary" role="alert">
+            <strong>{{ message }}</strong>
+        </div>
+        {% endfor %}
+    {% endif %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Section</th>
+            <th scope="col">subject</th>
+            <th scope="col">Name</th>
+            <th scope="col">Remaining</th>
+            <th scope="col">Max</th>
+          </tr>
+        </thead>
+        <tbody>
+    {% for subject in all_subjects %}
+        <tr>
+            <form action="register" method="post">
+                {% csrf_token %}
+                <th scope="row" name="section">{{subject.sec_subject}}</th>
+                <td name="subjectName">{{ subject.N_subject }}</td>
+                <td>{{ subject.teacher }}</td>
+                <td name="remaining">{{ subject.remaining_class }}</td>
+                <td>{{ subject.max_class }}</td>
+                <td><a href="register/{{subject.sec_subject}}/{{subject.N_subject}}" class="btn btn-success">Register</a></td>
+            </form>
+        </tr>
+    {% empty %}
+        <p>ไม่มีรายวิชาเปิดในเทอมนี้</p>
+    {% endfor %}
+{% endblock %}
