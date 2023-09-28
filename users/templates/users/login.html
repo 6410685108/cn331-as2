@@ -4,6 +4,7 @@
 {% block body %}
 <h1 class="text-center mt-3">Login</h1>
     <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
         <div class="form-group mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" name="username" class="form-control" placeholder="username">
