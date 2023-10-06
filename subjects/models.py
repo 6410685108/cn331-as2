@@ -7,3 +7,7 @@ class subject(models.Model):
     teacher = models.CharField(max_length=60)
     max_class = models.IntegerField()
     remaining_class = models.IntegerField()
+    
+    def __str__(self) -> str:
+        return f"({self.sec_subject}) {self.N_subject}"
+    
