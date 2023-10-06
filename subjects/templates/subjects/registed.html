@@ -20,22 +20,20 @@
           </tr>
         </thead>
         <tbody>
-    {% for subject in all_subjects %}
+    {% for reg in reg_subjects %}
+        {% with subject=reg.Subject %}
         <tr>
-            <form action="users/register" method="post">
+            <form action="users/unregisted" method="post">
                 {% csrf_token %}
                 <th scope="row" name="section">{{subject.sec_subject}}</th>
                 <td name="subjectName">{{ subject.N_subject }}</td>
                 <td>{{ subject.teacher }}</td>
                 <td name="remaining">{{ subject.remaining_class }}</td>
                 <td>{{ subject.max_class }}</td>
-                {% comment %} {% if is_Reg %} {% endcomment %}
-                    <td><a href="register/{{subject.sec_subject}}/{{subject.N_subject}}" class="btn btn-success" onclick="return confirm('Comfirm Register or not.')">Register</a></td>
-                {% comment %} {% else %} {% endcomment %}
-                    {% comment %} <td>คุณได้ลงทะเบียนไปแล้ว<td>
-                {% endif %}  {% endcomment %}
+                <td><a href="unregisted/{{subject.sec_subject}}/{{subject.N_subject}}" class="btn btn-danger" onclick="return confirm('Comfirm Unregister or not.')">Register</a></td>
             </form>
         </tr>
+        {% endwith %}
     {% empty %}
         <p>ไม่มีรายวิชาเปิดในเทอมนี้</p>
     {% endfor %}

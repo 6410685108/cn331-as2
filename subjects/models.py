@@ -11,3 +11,7 @@ class subject(models.Model):
     def __str__(self) -> str:
         return f"({self.sec_subject}) {self.N_subject}"
     
+    
+
+
+
