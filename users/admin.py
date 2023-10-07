@@ -7,7 +7,7 @@ from users.models import CustomUser, ListRegSubject
 
 class adminListRegSubject(admin.ModelAdmin):
     list_display = ['user', 'Subject']
-    search_fields = ['user__username', 'Subject__subjectName']
+    search_fields = ['user__username', 'Subject__subjectName', 'Subject__subjectID']
     
 admin.site.register(ListRegSubject, adminListRegSubject)
 admin.site.register(CustomUser, UserAdmin)
