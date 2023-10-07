@@ -22,6 +22,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'allsubject' %}">Register</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'registed' %}">Registered</a>
+          </li>
         </ul>
         {% if user.is_authenticated %}
           <ul class="navbar-nav me-2">
@@ -30,7 +33,7 @@
                 {{ user.username }}
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'registed' %}">Registed</a></li>
+                <li><a class="dropdown-item" href="{% url 'edit_profile' %}">EditProfile</a></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               </ul>
             </li>
