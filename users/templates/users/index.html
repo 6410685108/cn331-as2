@@ -2,7 +2,7 @@
 {% block body %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="{% url 'index' %}"><img src="https://assets.stickpng.com/images/613792874b96600004f676fd.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,28 +32,30 @@
         {% endif %}
     </div>
   </div>
-</nav>
-{% comment %} <div class="bg-primary">
-    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
-    <p>Student ID: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>Phone: {{ user.phone }}</p>
-    <p>info: {{ user.additional_info }}</p>
-</div> {% endcomment %}
+</nav> 
 <div class="container d-flex align-items-center justify-content-center vh-100">
   <div class="card text-center w-100">
-    <div class="card-header bg-light">
+    <div class="card-header">
       INFO
     </div>
     <div class="card-body">
-      <p >Name: {{ user.first_name }} {{ user.last_name }}</p>
-      <p>Student ID: {{ user.username }}</p>
-      <p>Email: {{ user.email }}</p>
-      <p>Phone: {{ user.phone }}</p>
-      <p>info: {{ user.additional_info }}</p>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Name: </p>
+          <p>Student ID: </p>
+          <p>Email: </p>
+          <p>Phone: </p>
+        </div>
+        <div class="col-md-6">
+          <p>{{ user.first_name }} {{ user.last_name }}</p>
+          <p>{{ user.username }}</p>
+          <p>{{ user.email }}</p>
+          <p>{{ user.phone }}</p>
+        </div>
+      </div>
     </div>
-    <div class="card-footer text-body-secondary">
-      <a class="btn btn-primary btn-hover" href="{% url 'edit_profile' %}">Edit Profile</a>
+    <div class="card-footer">
+      <a class="btn" href="{% url 'edit_profile' %}">Edit Profile</a>
     </div>
   </div>
 </div>

@@ -2,9 +2,13 @@
 {% block title%}Login{% endblock %}
 
 {% block body %}
-    <div class="position-absolute top-50 start-50 translate-middle">
-        <h1 class="text-center mt-3">Login</h1>
-            <form action="{% url 'login' %}" method="post">
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="card text-center w-100">
+        <div class="card-header">
+        <h3 class="login">Login</h3>
+        </div>
+        <form action="{% url 'login' %}" method="post">
+            <div class="card-body">
                 {% csrf_token %}
                 <div class="form-group mb-3">
                     <label for="username" class="form-label">Username</label>
@@ -14,12 +18,15 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control mb-3" placeholder="password">
                 </div>
-                <div >
-                    <input type="submit" name="login" class="btn btn-primary">
+                <div>
+                    <input type="submit" name="login" class="submit">
                 </div>
-            </form>
+            </div> 
+        </form>
             {% if message %}
                 <div> {{ message }} </div>
             {% endif %}
+        </div> 
     </div> 
+</div> 
 {% endblock %}

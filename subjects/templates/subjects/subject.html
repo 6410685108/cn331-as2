@@ -16,6 +16,7 @@
             <th scope="col">ID</th>
             <th scope="col">Term</th>
             <th scope="col">Available</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>
@@ -28,13 +29,13 @@
                 <td>{{ subject.term }}/{{ subject.year }}</td>
                 <td name="available">{{ subject.remaining_class }}/{{ subject.max_class }}</td>
                 {% if subject.subjectStatus %}
-                    <td><a href="register/{{subject.subjectID}}" class="btn btn-success" onclick="return confirm('Comfirm Register or not.')">Register</a></td>
+                    <td><a href="register/{{subject.subjectID}}" class="btn btn-success" onclick="return confirm('Comfirm Register or not.')">Apply</a></td>
                 {% else %}
-                    <td>Close<td>
+                    <td><a class="btn btn-secondary">Close</a></td>
                 {% endif %}
             </form>
         </tr>
     {% empty %}
-        <p>ไม่มีรายวิชาเปิดในเทอมนี้</p>
+        <p>No Subjects</p>
     {% endfor %}
 {% endblock %}

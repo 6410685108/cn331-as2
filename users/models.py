@@ -6,7 +6,6 @@ from django.contrib.auth.models import User, AbstractUser
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     RegSubject_set = models.ManyToManyField(to='subjects.subject', through='users.ListRegSubject',related_name='StudentReg_set')
-    additional_info = models.CharField(max_length=1000, blank=True, null=True, default='')
     phone = models.CharField(max_length=10, blank=True, null=True, default='')
     
 class ListRegSubject(models.Model):
