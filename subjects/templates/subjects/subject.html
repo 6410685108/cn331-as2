@@ -29,11 +29,11 @@
                 <td>{{ subject.teacher }}</td>
                 <td name="remaining">{{ subject.remaining_class }}</td>
                 <td>{{ subject.max_class }}</td>
-                {% comment %} {% if is_Reg %} {% endcomment %}
+                {% if subject.is_open %}
                     <td><a href="register/{{subject.sec_subject}}/{{subject.N_subject}}" class="btn btn-success" onclick="return confirm('Comfirm Register or not.')">Register</a></td>
-                {% comment %} {% else %} {% endcomment %}
-                    {% comment %} <td>คุณได้ลงทะเบียนไปแล้ว<td>
-                {% endif %}  {% endcomment %}
+                {% else %}
+                    <td>Close<td>
+                {% endif %}
             </form>
         </tr>
     {% empty %}

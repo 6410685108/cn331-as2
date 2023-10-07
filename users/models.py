@@ -16,3 +16,6 @@ class ListRegSubject(models.Model):
                 fields=['user', 'Subject'], name='unique_user_subject'
             )
         ]
+    
+    def __str__(self) -> str:
+        return f'{self.user}-{self.Subject}'

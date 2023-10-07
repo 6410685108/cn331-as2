@@ -9,9 +9,9 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def showallsubject(request):
-    
     return render(request, 'subjects/subject.html', {'all_subjects': subject.objects.all()})
 
+@login_required
 def showRegsubject(request):
     subjectofstudent = request.user.list_subject.all()
     return render(request, 'subjects/registed.html', {'reg_subjects': subjectofstudent})
@@ -20,10 +20,7 @@ def showRegsubject(request):
 def register(request, section, namesubject):
     # if request.method == 'POST':
     try:
-        is_Reg = False
         targetS = subject.objects.get(sec_subject=section, N_subject=namesubject)
-        # List_reg = ListRegSubject.objects.get(user=request.user, Subject=targetS)
-        # is_Reg = List_reg is not None
         if targetS.remaining_class != 0:
             ListRegSubject.objects.create(user=request.user, Subject=targetS)
             targetS.remaining_class -= 1
