@@ -11,7 +11,7 @@
     {% endif %}
     <table class="table">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th scope="col">Subject</th>
             <th scope="col">ID</th>
             <th scope="col">Term</th>
@@ -21,14 +21,14 @@
         <tbody>
     {% for reg in reg_subjects %}
         {% with subject=reg.Subject %}
-        <tr>
+        <tr class="text-center">
             <form action="users/unregisted" method="post">
                 {% csrf_token %}
                 <td name="subjectName">{{subject.subjectName}}</th>
                 <td name="subjectID">{{ subject.subjectID }}</td>
                 <td>{{ subject.term }}/{{ subject.year }}</td>
                 <td name="available">{{ subject.remaining_class }}/{{ subject.max_class }}</td>
-                <td><a href="unregisted/{{subject.subjectID}}" class="btn btn-danger" onclick="return confirm('Comfirm Unregister or not.')">Register</a></td>
+                <td ><a href="unregisted/{{subject.subjectID}}" class="btn btn-danger" onclick="return confirm('Comfirm Unregister or not.')">ยกเลิกการลงทะเบียน</a></td>
             </form>
         </tr>
         {% endwith %}

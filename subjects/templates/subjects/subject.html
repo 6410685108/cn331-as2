@@ -11,7 +11,7 @@
     {% endif %}
     <table class="table">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th scope="col">Subject</th>
             <th scope="col">ID</th>
             <th scope="col">Term</th>
@@ -20,7 +20,7 @@
         </thead>
         <tbody>
     {% for subject in all_subjects %}
-        <tr>
+        <tr class="text-center">
             <form action="users/register" method="post">
                 {% csrf_token %}
                 <td name="subjectName">{{subject.subjectName}}</th>

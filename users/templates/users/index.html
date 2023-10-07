@@ -25,7 +25,6 @@
                 {{ user.username }}
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'edit_profile' %}">EditProfile</a></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               </ul>
             </li>
@@ -34,11 +33,29 @@
     </div>
   </div>
 </nav>
-<ul>
-    <li>Name: {{ user.first_name }} {{ user.last_name }}</li>
-    <li>Student ID: {{ user.username }}</li>
-    <li>Email: {{ user.email }}</li>
-    <li>Phone: {{ user.phone }}</li>
-    <li>info: {{ user.additional_info }}</li>
-</ul>
+{% comment %} <div class="bg-primary">
+    <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+    <p>Student ID: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Phone: {{ user.phone }}</p>
+    <p>info: {{ user.additional_info }}</p>
+</div> {% endcomment %}
+<div class="container d-flex align-items-center justify-content-center vh-100">
+  <div class="card text-center w-100">
+    <div class="card-header bg-light">
+      INFO
+    </div>
+    <div class="card-body">
+      <p >Name: {{ user.first_name }} {{ user.last_name }}</p>
+      <p>Student ID: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Phone: {{ user.phone }}</p>
+      <p>info: {{ user.additional_info }}</p>
+    </div>
+    <div class="card-footer text-body-secondary">
+      <a class="btn btn-primary btn-hover" href="{% url 'edit_profile' %}">Edit Profile</a>
+    </div>
+  </div>
+</div>
+
 {% endblock body %}
