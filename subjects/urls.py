@@ -4,6 +4,6 @@ from . import views
 urlpatterns = [
     path('', views.showallsubject, name='allsubject'),
     path('registed', views.showRegsubject, name='registed'),
-    path('unregisted/<section>/<namesubject>', views.cancelReg, name='unregisted'),
-    path('register/<section>/<namesubject>', views.register, name='register'),
+    path('unregisted/<sID>', views.cancelReg, name='unregisted'),
+    path('register/<sID>', views.register, name='register'),
 ]

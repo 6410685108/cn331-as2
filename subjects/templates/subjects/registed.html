@@ -12,11 +12,10 @@
     <table class="table">
         <thead>
           <tr>
-            <th scope="col">Section</th>
-            <th scope="col">subject</th>
-            <th scope="col">Name</th>
-            <th scope="col">Remaining</th>
-            <th scope="col">Max</th>
+            <th scope="col">Subject</th>
+            <th scope="col">ID</th>
+            <th scope="col">Term</th>
+            <th scope="col">Available</th>
           </tr>
         </thead>
         <tbody>
@@ -25,12 +24,11 @@
         <tr>
             <form action="users/unregisted" method="post">
                 {% csrf_token %}
-                <th scope="row" name="section">{{subject.sec_subject}}</th>
-                <td name="subjectName">{{ subject.N_subject }}</td>
-                <td>{{ subject.teacher }}</td>
-                <td name="remaining">{{ subject.remaining_class }}</td>
-                <td>{{ subject.max_class }}</td>
-                <td><a href="unregisted/{{subject.sec_subject}}/{{subject.N_subject}}" class="btn btn-danger" onclick="return confirm('Comfirm Unregister or not.')">Register</a></td>
+                <td name="subjectName">{{subject.subjectName}}</th>
+                <td name="subjectID">{{ subject.subjectID }}</td>
+                <td>{{ subject.term }}/{{ subject.year }}</td>
+                <td name="available">{{ subject.remaining_class }}/{{ subject.max_class }}</td>
+                <td><a href="unregisted/{{subject.subjectID}}" class="btn btn-danger" onclick="return confirm('Comfirm Unregister or not.')">Register</a></td>
             </form>
         </tr>
         {% endwith %}
