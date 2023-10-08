@@ -19,7 +19,6 @@ def showRegsubject(request):
 
 @login_required
 def register(request, sID):
-    # if request.method == 'POST':
     try:
         targetS = subject.objects.get(subjectID=sID)
         if targetS.remaining_class != 0:

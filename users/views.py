@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
+from .models import CustomUser
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserEditForm
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'users/index.html')
+    if request.user.is_staff:
+        return redirect('/admin/')
+    else:
+        return render(request, 'users/index.html')
 
 @login_required
 def edit_profile(request):
@@ -24,3 +27,4 @@ def edit_profile(request):
 @login_required
 def profile(request):
     return render(request, 'user/index.html')
+
