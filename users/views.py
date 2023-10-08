@@ -8,9 +8,6 @@ from .forms import CustomUserEditForm
 # Create your views here.
 
 def index(request):
-    # if not request.user.is_authenticate:
-    #     return HttpResponseRedirect(reverse('login'))
-
     return render(request, 'users/index.html')
 
 @login_required

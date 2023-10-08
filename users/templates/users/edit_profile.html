@@ -6,8 +6,8 @@
             <h3 class="login">Edit Your Profile</h3> 
         </div>
             <form method="post">
+                {% csrf_token %}
                 <div class="card-body">
-                    {% csrf_token %}
                     <div class="form-group">
                         <label for="first_name'" class="mt-2">First Name:</label>
                         <input type="first_name" class="form-control" id="first_name" name="first_name" value="{{ form.first_name.value }}">

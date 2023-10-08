@@ -10,6 +10,7 @@ class adminsubject(admin.ModelAdmin):
     list_display = ['subjectName', 'subjectID', 'remaining_class', 'max_class', 'subjectStatus']
     search_fields = ['subjectName']
     list_filter = ['subjectStatus']
+    ordering = ('subjectID',)
     inlines = [ListRegSubjectInline]
 
 admin.site.register(subject, adminsubject)

@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class subject(models.Model):
-    subjectID = models.CharField(max_length=6)
+    subjectID = models.CharField(max_length=6, unique=True)
     subjectName = models.CharField(max_length=64)
     term = models.IntegerField(default=0)
     year = models.IntegerField(default=datetime.now().year)
