@@ -6,7 +6,7 @@
 ## วิดีโอสอนการใช้งาน
 https://www.youtube.com/watch?v=prCK3ghUIAw
 
-## วิธีใช้การ
+## วิธีการใช้งาน
 ![image](ReadmeImage/login.png)
 หน้านี้คือเอาไว้สำหรับการเข้าสู่ระบบ
 
