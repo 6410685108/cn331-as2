@@ -6,5 +6,5 @@
 ## วิดีโอสอนการใช้งาน
 -------------------
 
-## link
+## link web app
 https://6410685108p.pythonanywhere.com/login/
